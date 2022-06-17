@@ -14,3 +14,4 @@ db_file = "data.csv"
 async def get_model(request: Request, model: str):
     """
     Get model data from the database
+    """
