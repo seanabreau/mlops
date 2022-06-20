@@ -1,0 +1,54 @@
+version: "3.7"
+
+services:
+  frontend:
+    build: frontend
+    ports:
+      - 8501:8501
+    networks: 
+      Connection_service:
+        aliases: 
+          - frontend.docker
+    depends_on:
+      - backend
+      - postgres
+    volumes:
+      - ./frontend:/app
+
+  backend:
+    build: backend
+    ports:
+      - 8000:8000
+    networks: 
+      Connection_service: 
+        aliases: 
+          - backend.docker
+    volumes:
+      - ./backend:/app
+
+  postgres:
+    container_name: postgres
+    image: 'postgres:latest'
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=experiment_db
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+    - 5432:5432
+    networks: 
+      Connection_service: 
+        aliases: 
+          - postgres.docker
+    volumes:
+      # copy the sql script to create tables
+      - ./sql/create_experiment_table.sql:/docker-entrypoint-initdb.d/create_experiment_table.sql
+      - ./postgres_data:/var/lib/postgresql/postgres_data
+
+networks:
+  Connection_service:
+    external: true
