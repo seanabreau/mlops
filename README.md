@@ -30,3 +30,7 @@ http://localhost:8501
 - Instead of storing our unprocessed images and processing them in our inference function, we should perhaps store the images already processed in our db.
 - Metrics and monitoring is important. Integrating our api with datadog or cloudflare could help our response time and protect our systems. We could also better understand the number of read/write queries per second to better optimize our systems.
 - Using sql alchemy or another object relational manager would be a good practice for querying our dbs.
+
+## Task 1
+
+ - Please find task 1 presentation at the top level of the repo "IIP to producuction.pdf"
