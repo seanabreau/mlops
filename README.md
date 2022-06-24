@@ -16,7 +16,7 @@ csv (data.csv) that contains data from different training runs of a machine lear
 Component 2: FastApi (for REST)
 
 INPUT
-{experiment name
+{experiment name,
 input image}
 
 OUTPUT
