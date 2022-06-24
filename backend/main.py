@@ -21,8 +21,7 @@ async def get_inference(request: Request, experiment_name: str, image: str):
     :param image: The image to be classified
     :return: The model outputs are being returned.
     """
-    model_outputs = inference(experiment_name, image)
-    return model_outputs
+    return inference(experiment_name, image)
 
 
 @app.get("/v1/get_models")
@@ -50,5 +49,4 @@ async def get_models(request: Request):
     :type request: Request
     :return: A list of images in the data folder
     """
-    images = fnmatch.filter(os.listdir("./data"), "*.png")
-    return images
+    return fnmatch.filter(os.listdir("./data"), "*.png")

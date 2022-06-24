@@ -31,14 +31,14 @@ class GradioOutputs:
         """
         It returns a list of models.
         """
-        result = requests.get(f"http://backend.docker:8000/v1/get_models")
+        result = requests.get("http://backend.docker:8000/v1/get_models")
         return ast.literal_eval(result.text)
 
     def images_list(self) -> List:
         """
         It returns a list of images.
         """
-        result = requests.get(f"http://backend.docker:8000/v1/get_images")
+        result = requests.get("http://backend.docker:8000/v1/get_images")
         return ast.literal_eval(result.text)
 
     def training_result(self, experiment_name) -> Tuple[pd.DataFrame, pd.DataFrame]:
