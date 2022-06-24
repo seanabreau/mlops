@@ -1,5 +1,20 @@
 # Sean Abreau mlops project
 
+## Description
+
+A database that stores metadata about models.
+A service that launches the model, and exposes an API to accept input parameters, and return model inference results.
+An http server + interface that visualizes the training metrics and output.
+
+Containerized solution and launched through a docker-compose file.
+Tooling for each component includes:
+
+Component 1: Postgres
+
+Component 2: FastApi (for REST)
+
+Component 3: Gradio
+
 ## Requirements
 
 - Docker
@@ -33,4 +48,4 @@ http://localhost:8501
 
 ## Task 1
 
- - Please find task 1 presentation at the top level of the repo "IIP to producuction.pdf"
+- Please find task 1 presentation at the top level of the repo "IIP to producuction.pdf"
