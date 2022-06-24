@@ -11,9 +11,20 @@ Tooling for each component includes:
 
 Component 1: Postgres
 
+csv (data.csv) that contains data from different training runs of a machine learning model, which loads into the database. The CSV contains a subset of hyperparameters used for training the model and the training loss over time.
+
 Component 2: FastApi (for REST)
 
+INPUT
+{experiment name
+input image}
+
+OUTPUT
+{model inference results}
+
 Component 3: Gradio
+
+This interface / dashboard interacts with Component 1 to visualize training metrics and accept input from the user regarding which experiment to investigate. Then it interacts with Component 2 to send a sample image from the dataset (data/) and retrieve output from the model inference.
 
 ## Requirements
 
