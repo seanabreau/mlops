@@ -52,10 +52,8 @@ def load_image(image: str):
     """
     image_path (str): path to image
     """
-    image = image
     image_path = os.path.join("./data", image)
-    image = Image.open(image_path)
-    return image
+    return Image.open(image_path)
 
 
 def inference(experiment_name: str, image):
