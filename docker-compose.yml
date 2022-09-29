@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.10"
 
 services:
   frontend:
@@ -51,4 +51,4 @@ services:
 
 networks:
   Connection_service:
-    external: true
+    external: false
