@@ -1,4 +1,4 @@
-# Sean Abreau mlops project
+# mlops project
 
 ## Description
 
